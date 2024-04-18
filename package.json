@@ -3,9 +3,4 @@
     "cypress": "^13.7.3",
     "prettier": "^3.2.5"
   }
-    "scripts": {
-    "start": "node index.js", // Example of a start script
-    "test": "echo \"Error: no test specified\" && exit 1", // Example of a test script
-    "cypress:run": "cypress run" // Script for running Cypress tests
-  },
 }
