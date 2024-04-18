@@ -23,8 +23,8 @@ jobs:
           npm install
           npm start
 
-      - name: Install Cypress
-        run: npm install cypress
-
-      - name: Run Cypress Tests
-        run: npm run cypress:run
+      - name: Install and run Cypress
+        working-directory: ./
+        run: | 
+          npm: install cypress
+          run: npm run cypress:run
