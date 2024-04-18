@@ -3,23 +3,28 @@ name: Running Cypress Tests on Trello project
 on: push
 
 jobs:
-  cypress-run:
+  deploy-and-cypress-run:
     runs-on: ubuntu-22.04
+    
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Navegate to app folder
-        run: cd app        
+        
+      # Install npm dependencies and start Trello project
+     
+      - name: Navegate to app folder and install Trello project
+        working-directory: ./app
+        run: |
+          npm install
+          npm start
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          run: cd app
           build: npm run build
           start: npm start
