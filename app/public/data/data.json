@@ -1,0 +1,21 @@
+{
+  "boards": [
+    {
+      "name": "Board created using .request() command",
+      "user": 0,
+      "id": 64190047043,
+      "starred": false,
+      "created": "2024-03-14"
+    },
+    {
+      "name": "Name edited using .request() command",
+      "user": 0,
+      "id": 32822339257,
+      "starred": false,
+      "created": "2024-03-14"
+    }
+  ],
+  "tasks": [],
+  "users": [],
+  "lists": []
+}
