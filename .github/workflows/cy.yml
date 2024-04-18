@@ -3,7 +3,7 @@ name: Running Cypress Tests on Trello project
 on: push
 
 jobs:
-  deploy-and-cypress-run:
+  deploy-Trello-App:
     runs-on: ubuntu-22.04
     
     steps:
@@ -23,8 +23,16 @@ jobs:
           npm install
           npm start
 
-      - name: Install and run Cypress
-        working-directory: ./
-        run: | 
-          npm: install cypress
-          run: npm run cypress:run
+  run-cypress-tests:
+    needs: deploy-Trello-App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies for Cypress
+        run: npm install
+
+      - name: Run Cypress Tests
+        run: npm run cypress:run
