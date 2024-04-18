@@ -18,7 +18,7 @@ jobs:
         run: cd app        
        
       - name: Install App
-          build: npm install
+          run: npm install
           start: npm start
 
       - name: Cypress run
