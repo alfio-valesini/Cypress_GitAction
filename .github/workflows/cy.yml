@@ -16,13 +16,10 @@ jobs:
           node-version: '14'
       - name: Navegate to app folder
         run: cd app        
-       
-      - name: Install App
-          run: npm install
-          start: npm start
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          run: cd app
           build: npm run build
           start: npm start
