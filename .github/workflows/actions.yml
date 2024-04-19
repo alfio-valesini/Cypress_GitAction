@@ -1,25 +1,26 @@
 name: Cypress Test
 on: [push]
 jobs: 
-  cypress-run:
+  Test-Trello-app-using-Cypress:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout the Repository
         uses: actions/checkout@v4.1.2
-             
+
       - name: Install App 
         run: npm install
         working-directory: ./app
 
       - name: start App 
-        run: npm start
+        run: npm start &
         working-directory: ./app
 
-      - name: Wait for app to start
+      - name: move to root directory
+        run: cd ..
+    
+      - name: Wait for App to start
         run: sleep 5s
         
-      - name: Cypress.io
+      - name: Execute Cypress.io
         uses: cypress-io/github-action@v6
-     
-          
-    
+      
