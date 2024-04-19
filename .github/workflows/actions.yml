@@ -6,13 +6,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.2
-       - name: Cypress.io
-        working-directory: ./
-        uses: cypress-io/github-action@v6
-      - name: Install App
-        working-directory: ./app
+             
+      - name: Install App 
         run: npm install
-        start: npm start
+        working-directory: ./app
+
+      - name: start App 
+        run: npm start
+        working-directory: ./app
+
+      - name: Wait for app to start
+        run: sleep 5s
+        
+      - name: Cypress.io
+        uses: cypress-io/github-action@v6
      
           
     
