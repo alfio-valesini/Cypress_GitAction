@@ -12,7 +12,7 @@ jobs:
         working-directory: ./app
 
       - name: start App 
-        run: npm start
+        run: npm start &
         working-directory: ./app
 
       - name: move to root directory
