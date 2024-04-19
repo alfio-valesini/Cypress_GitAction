@@ -15,12 +15,8 @@ jobs:
         run: npm start
         working-directory: ./app
 
-  run_tests:
-    runs-on: ubuntu-latest
-    steps:
-     # Wait for server to start
-      - name: Wait for server
-        run: sleep 10s
+      - name: move to root directory
+        working-directory: .
     
       - name: Checkout
         uses: actions/checkout@v4.1.2
